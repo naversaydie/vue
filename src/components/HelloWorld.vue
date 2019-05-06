@@ -12,14 +12,21 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      data:[]
+      data:[1,2,3]
     }
   },
   mounted(){
-    this.$axios.get('/api/data').then(function (data) {
-      this.data=res.data
-      console.log(res)
+    // mock模拟数据接口
+    // this.$axios.get('/user/userInfo').then(function (res) {
+    //
+    //   console.log(res)
+    //
+    // })
 
+
+    //eolinker 模拟接口
+    this.$axios.get('https://result.eolinker.com/gX7YQZRfdf4726b0b0016334e2c679fc4297f8240bea9ea?uri=home/list').then(res=>{
+      console.log(res)
     })
   }
 }

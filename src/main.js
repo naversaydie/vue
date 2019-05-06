@@ -9,7 +9,7 @@ Vue.prototype.$axios= axios
 import Vant from 'vant'
 import 'vant/lib/index.css';
 Vue.use(Vant);
-import './mock/mock'
+require('./mock/index');
 
 Vue.config.productionTip = false
 
