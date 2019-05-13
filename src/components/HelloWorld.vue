@@ -3,6 +3,7 @@
     <ul>
       <li v-for="data in data" :key="data">{{data}}</li>
     </ul>
+    <div>单价：{{money|moneyFormat()}}</div>
   </div>
 </template>
 
@@ -12,7 +13,8 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      data:[1,2,3]
+      data:[1,2,3],
+      money:19023,
     }
   },
   mounted(){
