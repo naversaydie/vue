@@ -1,5 +1,5 @@
 <template>
-    <div>de</div>
+    <div class="me">de</div>
 </template>
 
 <script>
@@ -9,5 +9,9 @@
 </script>
 
 <style scoped lang="stylus" ref="stylesheet/stylus">
+    .me
+        background-color: #fff
+        width 100%
+        height 100%
 
 </style>

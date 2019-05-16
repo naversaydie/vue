@@ -11,6 +11,11 @@ import 'vant/lib/index.css';
 Vue.use(Vant);
 require('./mock/index');
 
+//引入顶部可触摸滑动具有回弹效果
+import LyTab from 'ly-tab'
+
+Vue.use(LyTab);
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

@@ -1,5 +1,5 @@
 <template>
-    <div>search</div>
+    <div class="search">search</div>
 </template>
 
 <script>
@@ -9,5 +9,9 @@
 </script>
 
 <style scoped lang="stylus" ref="stylesheet/stylus">
+    .search
+        background-color: green
+        width 100%
+        height 100%
 
 </style>

@@ -11,6 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "ly-tab": "^2.1.2",
     "mockjs": "^1.0.1-beta3",
     "vant": "^1.6.16",
     "vue": "^2.5.2",

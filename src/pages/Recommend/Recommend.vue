@@ -1,5 +1,5 @@
 <template>
-  <div>recoommend</div>
+  <div class="recoommend">recoommend</div>
     
 </template>
 
@@ -10,7 +10,9 @@
 </script>
 
 <style scoped lang="stylus" ref="stylesheet/stylus">
-  div
-    background-color: #fff
+  .recoommend
+      background-color: #fff
+      width 100%
+      height 100%
 
 </style>
