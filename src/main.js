@@ -14,6 +14,11 @@ require('./mock/index');
 //引入顶部可触摸滑动具有回弹效果
 import LyTab from 'ly-tab'
 
+//引入swiper插件
+
+
+
+
 Vue.use(LyTab);
 
 Vue.config.productionTip = false
