@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="hot_nav_bottom">
-            <div class="hot_nav_bottom_inner"></div>
+            <div class="hot_nav_bottom_inner" :style="setBarW"></div>
         </div>
 
 
@@ -79,7 +79,72 @@
 
 <script>
     export default {
-        name: "HotNav"
+        name: "HotNav",
+        data(){
+            return {
+                screenW:window.innerWidth||document.body.clientWidth||document.documentElement.clientWidth,
+                contentW:720,
+                bgBarW:100,
+                innerW:0,
+                startX:0,
+                endFlag:0,
+                moveWidth:0
+
+
+            }
+        },
+        mounted(){
+            this.innerW = this.screenW/this.contentW * this.bgBarW
+            this.bindEvent()
+
+        },
+        computed:{
+            //设置滚动条长度
+            setBarW(){
+                return {
+                    width:`${this.innerW}px`,
+                    left:`${this.moveWidth}px`
+                }
+            }
+        },
+        methods:{
+            bindEvent(){
+                this.$el.addEventListener('touchstart',this.handleTouchStart,false)
+                this.$el.addEventListener('touchmove',this.handleTouchMove,false)
+                this.$el.addEventListener('touchend',this.handleTouchEnd,false)
+            },
+            //触摸事件
+            handleTouchStart(e){
+                let touch = e.touches[0];
+                this.startX = Number(touch.pageX)
+                console.log(touch)
+            },
+            //拖动事件
+            handleTouchMove(e){
+                let touch = e.touches[0];
+                let moveWidth =Number(touch.pageX)-this.startX;
+                this.moveWidth = -(moveWidth/this.contentW*this.bgBarW - this.endFlag)
+                if(this.moveWidth<=0){
+                    this.moveWidth = 0;
+
+                }else if(this.moveWidth>=this.bgBarW - this.innerW){
+                    this.moveWidth = this.bgBarW - this.innerW
+                }
+
+            },
+            //结束触摸事件
+            handleTouchEnd(){
+                this.endFlag = this.moveWidth
+
+            }
+
+
+
+
+
+        }
+
+
     }
 </script>
 
@@ -123,7 +188,7 @@
             margin-left -50px
             bottom 8px
             .hot_nav_bottom_inner
-                width 50px
+                position absolute
                 height 100%
                 background orange
 
