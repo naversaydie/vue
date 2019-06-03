@@ -1,0 +1,4 @@
+/*
+* 统一接口管理文件
+* */
+//  热门商品列表  http://mobile.yangkeduo.com/proxy/api/api/alexa/v1/goods?list_update_time=true&platform=1&assist_allowed=1&page=1&size=20&list_id=7hP1HoGGA8&antiContent=0anAfxn5ryloU9dVzi619OWoe5wcP9gjxMp-Dk3PH_W22OPgtYIYKiKI_ju9ZzYGnx3ml7kFL794LCbbipUcq-b4C9SQN24j34wpuFP3XXs_1lqc4xGBYjD_qRfVsKLi7H1oIvd9qM79gbwsIm9RDe9jm9F_HTbnd8pS4eV2-QgJh1yqKVFmYJnUbHz6tQEwoI9seKMj0PP5DZoGlJptcqPJrxjhG07go6uF74gsSs_nLDyB5O2ykPeBHX8tHz7PLufFMUkdoFcfinEbcPz0repWXVJnXB3QZXJ_yt26_REszJ6NJHZg3R46xkFaS-V3Z1ym6hJiloruTRHCoV_jmghEIFtetLKA5QCLnR7unkMeCNQhXVDfSuq3tf3y7kGHXJ7YxSML8tWbAxiBHvp3pKc7IYnQIGQFw8qcJeAFRi-Ro9Bp6ge&pdduid=0

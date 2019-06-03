@@ -20,6 +20,8 @@
         </div>
         <!--nav-->
         <hot-nav/>
+        <!--hot shop list-->
+        <hot-shop-list/>
 
     </div>
 </template>
@@ -28,9 +30,10 @@
     import Swiper from 'swiper'
     import 'swiper/dist/css/swiper.min.css'
     import HotNav from './hotnav'
+    import HotShopList from './HotShopList'
     export default {
         name: "Hot",
-        components:{HotNav},
+        components:{HotNav,HotShopList},
         mounted(){
             new Swiper('.swiper-container', {
                 loop: true, // 循环模式选项

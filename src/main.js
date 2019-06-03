@@ -3,12 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import  store from './store'
 
-import axios from 'axios'
-Vue.prototype.$axios= axios
-import Vant from 'vant'
-import 'vant/lib/index.css';
-Vue.use(Vant);
 require('./mock/index');
 
 //引入顶部可触摸滑动具有回弹效果
@@ -29,8 +25,10 @@ Vue.filter('moneyFormat',money=>{
   return '$' + money + '.00元'
 })
 new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+
+    el: '#app',
+    router,
+    store,
+    components: { App },
+    template: '<App/>'
 })
