@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import  store from './store'
 
-require('./mock/index');
+require('./mock/index')
 
 //引入顶部可触摸滑动具有回弹效果
 import LyTab from 'ly-tab'

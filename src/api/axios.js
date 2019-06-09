@@ -1,6 +1,7 @@
 import  Axios from 'axios'
 
 export default function  $axios(url = '', params = {}, methods = 'GET') {
+    console.log(url)
 //    定义promise 对象
     let  promise;
     return new Promise((resolve, reject)=>{
@@ -24,6 +25,7 @@ export default function  $axios(url = '', params = {}, methods = 'GET') {
         }
         //   返回请求结果
         promise.then(response=>{
+
             resolve(response)
         }).catch(error=>{
             reject(error)

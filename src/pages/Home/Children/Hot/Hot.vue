@@ -1,19 +1,14 @@
 <template>
     <div class="hot">
         <!-- Slider main container -->
-        <div class="swiper-container">
+        <div class="swiper-container" v-if="homecasual.length>0">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide"><img src="../../imgs/swiper/s1.png" alt=""></div>
-                <div class="swiper-slide"><img src="../../imgs/swiper/s2.png" alt=""></div>
-                <div class="swiper-slide"><img src="../../imgs/swiper/s3.png" alt=""></div>
-                <div class="swiper-slide"><img src="../../imgs/swiper/s4.png" alt=""></div>
-                <div class="swiper-slide"><img src="../../imgs/swiper/s5.png" alt=""></div>
-                <div class="swiper-slide"><img src="../../imgs/swiper/s6.png" alt=""></div>
-                <div class="swiper-slide"><img src="../../imgs/swiper/s7.png" alt=""></div>
-                <div class="swiper-slide"><img src="../../imgs/swiper/s8.png" alt=""></div>
-                <div class="swiper-slide"><img src="../../imgs/swiper/s9.png" alt=""></div>
+                <div class="swiper-slide"  v-for="casual in homecasual" :key="casual.id">
+                    id为{{casual.id}}图片地址{{casual.image}}
+                    <img :src="casual.image" alt="">
+                </div>
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
@@ -31,18 +26,35 @@
     import 'swiper/dist/css/swiper.min.css'
     import HotNav from './hotnav'
     import HotShopList from './HotShopList'
+    import {mapState} from 'vuex'
     export default {
         name: "Hot",
         components:{HotNav,HotShopList},
         mounted(){
-            new Swiper('.swiper-container', {
-                loop: true, // 循环模式选项
-                autoplay:true,
-                pagination:{
-                    el:'.swiper-pagination'
-                }
-            });
+            //请求轮播数据
+            this.$store.dispatch('reqHomeCasual');
+            console.log(this.$store.state)
+
+        },
+        computed:{
+            ...mapState(['homecasual'])
+        },
+        watch:{
+            homecasual(){
+                this.$nextTick(()=>{
+                    new Swiper('.swiper-container', {
+                        loop: true, // 循环模式选项
+                        autoplay:true,
+                        pagination:{
+                            el:'.swiper-pagination'
+                        }
+                    });
+
+                })
+            }
+
         }
+
     }
 </script>
 
@@ -54,8 +66,10 @@
         background #f5f5f5
         .swiper-container
             width 100%
+            height 200px
             img
                 width 100%
+                height 200px
 
 
 </style>
