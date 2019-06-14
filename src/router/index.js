@@ -15,7 +15,6 @@ import Mbaby from '@/pages/Home/Children/Mbaby'
 import Phone from '@/pages/Home/Children/Phone'
 import Shirt from '@/pages/Home/Children/Shirt'
 
-
 Vue.use(Router)
 
 export default new Router({
